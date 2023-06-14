@@ -1,0 +1,32 @@
+.dropdown .dropdown-btn {
+    padding: 16px;
+    background: #c3ff9b;
+    color: #0d3d10;
+    border: solid;
+    border-color: #b4ec8f;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown .dropdown-content {
+    position: absolute;
+    top: 105%;
+    padding: 15px;
+    background: #c3ff9b;
+    color: #0d3d10;
+    width: 90%;
+    border: solid;
+    border-radius: 10px;
+}
+
+.dropdown .dropdown-content .dropdown-item {
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dropdown .dropdown-content .dropdown-item:hover {
+    background: #ffffff;
+    width: 95%;
+}
