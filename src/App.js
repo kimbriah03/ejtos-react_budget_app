@@ -2,6 +2,8 @@ import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import "./styles.css";
+
 //Code to import Budget.js
 import Budget from './components/Budget';
 
