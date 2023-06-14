@@ -1,5 +1,27 @@
 import React, { useContext, useState } from 'react';
+import { BiCaretDown } from 'react-icons/bi';
 
+function CDropdown () {
+
+    const [isActive, setIsActive] = useState(false);
+
+    return (
+        <div className = "dropdown"> 
+
+            <div className = "dropdown-btn" onClick= {e => setIsActive(!isActive)}>Choose Currency <BiCaretDown /></div>
+
+            {isActive && (
+                <div className = "dropdown-content">
+                    <div className = "dropdown-item" value = "$">$ Dollar</div>
+                    <div className = "dropdown-item" value = "£">£ Pound</div>
+                    <div className = "dropdown-item" value = "€">€ Euro</div>
+                    <div className = "dropdown-item" value = "₹">₹ Ruppee</div>
+                </div>
+            )}
+        </div>
+    );
+}
+/*
 const CurrencyDropdown = (props) => {
 
     const { curr, setCurr } = useState('');
@@ -16,6 +38,6 @@ const CurrencyDropdown = (props) => {
                 <option value = "₹ Ruppee" name = "₹ Ruppee">₹ Ruppee</option>
         </select>
     );
-};
+};*/
 
-export default CurrencyDropdown;
+export default CDropdown;
