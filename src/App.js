@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import "./styles.css";
+import "./style.css";
 
 //Code to import Budget.js
 import Budget from './components/Budget';
@@ -19,7 +19,11 @@ import ExpenseList from './components/ExpenseList';
 import AllocationForm from './components/AllocationForm';
 
 import { AppProvider } from './context/AppContext';
+
 const App = () => {
+
+    const [selected, setSelected] = useState("Choose Currency");
+
     return (
         <AppProvider>
             <div className='container'>
@@ -27,7 +31,7 @@ const App = () => {
                     <div className='row mt-3'>
                         {/* Add Budget component here under */} 
                         <div className = 'col-sm'>
-                            <Budget />
+                            <Budget selected = {selected} setSelected = {setSelected}/>
                         </div>       
 
                         {/* Add Remaining component here under */} 
@@ -41,7 +45,7 @@ const App = () => {
                         </div>
 
                         <div className = 'col-sm'>
-                            <CurrencyDropdown />
+                            <CurrencyDropdown selected = {selected} setSelected = {setSelected}/>
                         </div>
                     </div>       
                        
