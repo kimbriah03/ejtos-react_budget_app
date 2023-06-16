@@ -2,8 +2,24 @@ import React, { useContext } from 'react';
 import ExpenseItem from './ExpenseItem';
 import { AppContext } from '../context/AppContext';
 
-const ExpenseList = () => {
+const ExpenseList = ({props, selected}) => {
     const { expenses } = useContext(AppContext);
+
+    if (selected === "$ Dollar") {
+        selected = "$";
+    }
+    else if (selected === "£ Pound") {
+        selected = "£";
+    }
+    else if (selected === "€ Euro") {
+        selected = "€";
+    }
+    else if (selected === "₹ Ruppee") {
+        selected = "₹";
+    }
+    else { //default
+        selected = "£";
+    }
 
     return (
         <table className='table'>
@@ -17,7 +33,7 @@ const ExpenseList = () => {
           </thead>
             <tbody>
             {expenses.map((expense) => (
-                <ExpenseItem id={expense.id} key={expense.id} name={expense.name} cost={expense.cost} />
+                <ExpenseItem selected = {selected} id={expense.id} key={expense.id} name={expense.name} cost={expense.cost}/>
             ))}
             </tbody>
         </table>
