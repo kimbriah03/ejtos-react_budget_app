@@ -18,7 +18,7 @@ function CDropdown ({selected, setSelected}) {
                             setSelected(option)
                             setIsActive(false)}}
         
-                        className = "dropdown-item" value = "$">{option}</div>
+                        className = "dropdown-item" value = {option}>{option}</div>
                     ))}
                 </div>
             )}
