@@ -1,14 +1,30 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
-const Budget = (props, selected, setSelected) => {
+const Budget = ({props, selected}) => {
 
     const { expenses } = useContext(AppContext);
     const { budget, setBudget } = useState('');
 
+    if (selected === "$ Dollar") {
+        selected = "$";
+    }
+    else if (selected === "£ Pound") {
+        selected = "£";
+    }
+    else if (selected === "€ Euro") {
+        selected = "€";
+    }
+    else if (selected === "₹ Ruppee") {
+        selected = "₹";
+    }
+    else { //default
+        selected = "£";
+    }
+
     return (
         <div className = 'alert alert-secondary'>
-            <span> Budget: £{budget}
+            <span> Budget: { selected } {budget}
                 <input
                     required = 'required'
                     type = 'number'
