@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
-const AllocationForm = (props) => {
+const AllocationForm = ({props, selected}) => {
     const { dispatch, remaining } = useContext(AppContext);
 
     const [name, setName] = useState('');
@@ -35,6 +35,22 @@ const AllocationForm = (props) => {
         }
     };
 
+    if (selected === "$ Dollar") {
+        selected = "$";
+    }
+    else if (selected === "£ Pound") {
+        selected = "£";
+    }
+    else if (selected === "€ Euro") {
+        selected = "€";
+    }
+    else if (selected === "₹ Ruppee") {
+        selected = "₹";
+    }
+    else { //default
+        selected = "£";
+    }
+
     return (
         <div>
             <div className='row'>
@@ -63,7 +79,7 @@ const AllocationForm = (props) => {
                     </select>
 
                     <div className="input-group-prepend" style={{ marginLeft: '2rem' }, {padding: 8}}>
-                        £
+                        {selected}
                     </div>
                     
                     <input
