@@ -30,3 +30,15 @@
     background: #ffffff;
     width: 95%;
 }
+
+.plus {
+    cursor: pointer;
+}
+
+.minus {
+    cursor: pointer;
+}
+
+.delete {
+    cursor: pointer;
+}
