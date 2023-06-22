@@ -31,17 +31,17 @@ const App = () => {
                     <div className='row mt-3'>
                         {/* Add Budget component here under */} 
                         <div className = 'col-sm'>
-                            <Budget selected = {selected} setSelected = {setSelected}/>
+                            <Budget selected = {selected}/>
                         </div>       
 
                         {/* Add Remaining component here under */} 
                         <div className = 'col-sm'>
-                            <Remaining />
+                            <Remaining selected = {selected}/>
                         </div>       
 
                         {/* Add ExpenseTotal component here under */} 
                         <div className = 'col-sm'>
-                            <ExpenseTotal />
+                            <ExpenseTotal selected = {selected}/>
                         </div>
 
                         <div className = 'col-sm'>
@@ -53,7 +53,7 @@ const App = () => {
                     <h3 className = 'mt-3'> Allocation </h3>
                     <div className = 'row'>
                         <div className = 'col-sm'>
-                            <ExpenseList />
+                            <ExpenseList selected = {selected} />
                         </div>
                     </div>          
 
@@ -61,7 +61,7 @@ const App = () => {
                     <h3 className = 'mt-3'> Change Allocation </h3>
                     <div className = 'row mt-3'>
                         <div className = 'col-sm'>
-                            <AllocationForm />
+                            <AllocationForm selected = {selected} />
                         </div>
                     </div>       
             </div>
